@@ -17,6 +17,8 @@
   --radius: 12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{overflow-x:hidden;max-width:100%}
+.container,section,.hero,.format,.services{width:100%;max-width:100%;overflow-x:hidden}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
@@ -167,7 +169,7 @@ ul{list-style:none}
 .extra-price b{font-family:var(--font-d);font-size:20px;color:var(--yellow)}
 
 /* ── FLOATING CONTACTS (як на evakuator-odesa.site) ──────────── */
-.float-contacts{position:fixed;right:16px;bottom:24px;z-index:999;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.float-contacts{position:fixed!important;right:16px!important;bottom:80px!important;left:auto!important;z-index:9999!important;display:flex;flex-direction:column;gap:12px}
 .float-btn{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 6px 18px -4px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;position:relative}
 .float-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 24px -6px rgba(0,0,0,.35)}
 .float-btn svg{width:24px;height:24px}
@@ -177,17 +179,21 @@ ul{list-style:none}
 .float-btn-tooltip{position:absolute;right:calc(100% + 10px);white-space:nowrap;background:#222;color:#eee;font-size:11px;padding:5px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
 .float-btn:hover .float-btn-tooltip{opacity:1}
 @media(max-width:600px){
-  .float-contacts{bottom:16px;right:10px;gap:8px}
+  .float-contacts{bottom:80px!important;right:10px!important;gap:8px}
   .float-btn{width:44px;height:44px}
   .float-btn svg{width:20px;height:20px}
   .float-btn-tooltip{display:none}
 }
 
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .formats,.services-grid,.advantage-grid,.hero-inner{display:flex!important;flex-direction:column!important}
+  .hero-inner{display:flex!important;flex-direction:column!important}
+}
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-inner{display:flex!important;flex-direction:column!important;gap:40px}
   .hero-stats{gap:20px}
-  .formats{grid-template-columns:1fr}
+  .formats{display:flex!important;flex-direction:column!important}
   .process-grid{grid-template-columns:1fr 1fr}
   .footer-inner{grid-template-columns:1fr;gap:24px}
   .nav-links{display:none}
@@ -197,9 +203,9 @@ ul{list-style:none}
 @media(max-width:600px){
   .section{padding:48px 16px}
   .hero{padding:48px 16px;overflow-x:visible}
-  .process-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
-  .extra-grid{grid-template-columns:1fr}
+  .process-grid{display:flex!important;flex-direction:column!important}
+  .services-grid{display:flex!important;flex-direction:column!important}
+  .extra-grid{display:flex!important;flex-direction:column!important}
   .cta-band{padding:60px 16px}
   .cta-phone{font-size:16px;padding:14px 24px}
   .hero-photo-wrap{max-width:100%}
