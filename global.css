@@ -166,16 +166,22 @@ ul{list-style:none}
 .extra-price{font-size:12px;color:var(--text2);margin-top:auto}
 .extra-price b{font-family:var(--font-d);font-size:20px;color:var(--yellow)}
 
-/* ── FLOATING CONTACTS ─────────────────────────────────────────── */
-.floating-contacts{position:fixed;right:20px;bottom:20px;z-index:999;display:flex;flex-direction:column;gap:10px}
-.floating-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s;cursor:pointer}
-.floating-btn:hover{transform:scale(1.1)}
-.floating-btn svg{width:24px;height:24px;fill:currentColor}
-.floating-btn.phone{background:var(--yellow);color:var(--black)}
-.floating-btn.telegram{background:#0088cc;color:#fff}
-.floating-btn.viber{background:#7360f2;color:#fff}
-.floating-btn.whatsapp{background:#25d366;color:#fff}
-.floating-btn.messenger{background:#006aff;color:#fff}
+/* ── FLOATING CONTACTS (як на evakuator-odesa.site) ──────────── */
+.float-contacts{position:fixed;right:20px;bottom:24px;z-index:999;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.float-btn{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 10px 28px -6px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;position:relative}
+.float-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 14px 34px -8px rgba(0,0,0,.35)}
+.float-btn svg{width:26px;height:26px}
+.float-btn-call{background:var(--yellow);color:var(--black)}
+.float-btn-viber{background:#7360f2}
+.float-btn-whatsapp{background:#25d366}
+.float-btn-tooltip{position:absolute;right:calc(100% + 12px);white-space:nowrap;background:#222;color:#eee;font-size:12px;padding:6px 12px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
+.float-btn:hover .float-btn-tooltip{opacity:1}
+@media(max-width:600px){
+  .float-contacts{bottom:16px;right:14px;gap:10px}
+  .float-btn{width:52px;height:52px}
+  .float-btn svg{width:24px;height:24px}
+  .float-btn-tooltip{display:none}
+}
 
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
 @media(max-width:900px){
