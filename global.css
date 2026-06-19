@@ -55,6 +55,8 @@ ul{list-style:none}
 .nav-cta svg{width:16px;height:16px}
 
 /* ── HERO ───────────────────────────────────────────────────────── */
+.hero-photo-wrap{max-width:480px;margin:0 auto}
+.hero-photo{width:100%;height:auto;display:block;border-radius:var(--radius)}
 .hero{position:relative;padding:80px 20px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(245,197,24,.04) 0%,transparent 60%)}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
@@ -80,7 +82,7 @@ ul{list-style:none}
 .hero-stat-label{font-size:12px;color:var(--text2);margin-top:4px}
 .hero-visual{position:relative}
 .hero-photo-wrap{position:relative;border-radius:var(--radius);overflow:hidden}
-.hero-photo{width:100%;height:auto;border-radius:var(--radius);background:var(--bg3);min-height:300px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text2)}
+
 
 /* ── MARQUEE ────────────────────────────────────────────────────── */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--bg2)}
