@@ -236,3 +236,4 @@ ul{list-style:none}
 .calc-submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;background:var(--accent);color:#fff;padding:18px;border-radius:12px;font-weight:700;font-size:18px;margin-top:20px;border:none;cursor:pointer;transition:all .2s}
 .calc-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,93,169,.25)}
 .calc-submit i{font-size:20px}
+.calc-submit:disabled{opacity:.7;cursor:not-allowed;transform:none!important}

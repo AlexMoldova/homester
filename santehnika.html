@@ -378,30 +378,40 @@
       <p class="section-desc" style="margin:0 auto">Заповніть 3 поля — натисніть «Прорахувати» — і наш майстер одразу зателефонує.</p>
     </div>
     <div class="calc-section">
+<form id="calc-form" class="calc-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="Нова заявка з HomeMaster — Сантехніка">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="from_name" value="HomeMaster">
+      <input type="hidden" name="service" value="сантехніка">
+
       <div class="calc-field">
         <label>Тип об'єкту</label>
-        <select id="calc-type">
+        <select name="object_type" required>
+          <option value="">Оберіть…</option>
           <option value="Квартира">Квартира</option>
-          <option value="Будинок">Приватний будинок</option>
-          <option value="Офіс">Офіс / комерція</option>
-          <option value="Новобудова">Новобудова (чорнова)</option>
+          <option value="Приватний будинок">Приватний будинок</option>
+          <option value="Офіс / комерція">Офіс / комерція</option>
+          <option value="Новобудова (чорнова)">Новобудова (чорнова)</option>
         </select>
       </div>
       <div class="calc-row">
         <div class="calc-field">
           <label>К-сть кімнат</label>
-          <select id="calc-rooms">
-            <option value="1">1-кімнатна</option>
-            <option value="2" selected>2-кімнатна</option>
-            <option value="3">3-кімнатна</option>
-            <option value="4">4+ кімнат</option>
+          <select name="rooms" required>
+            <option value="">Оберіть…</option>
+            <option value="1-кімнатна">1-кімнатна</option>
+            <option value="2-кімнатна">2-кімнатна</option>
+            <option value="3-кімнатна">3-кімнатна</option>
+            <option value="4+ кімнат">4+ кімнат</option>
           </select>
         </div>
         <div class="calc-field">
           <label>Площа (м²)</label>
-          <select id="calc-area">
+          <select name="area" required>
+            <option value="">Оберіть…</option>
             <option value="до 50">до 50 м²</option>
-            <option value="50-80" selected>50–80 м²</option>
+            <option value="50-80">50–80 м²</option>
             <option value="80-120">80–120 м²</option>
             <option value="120+">120+ м²</option>
           </select>
@@ -409,21 +419,62 @@
       </div>
       <div class="calc-field">
         <label>Вид робіт</label>
-        <select id="calc-work">
-          <option value="повний монтаж">Повний електромонтаж під ключ</option>
-          <option value="часткова заміна">Часткова заміна труб</option>
-          <option value="аварійний ремонт">Аварійний ремонт</option>
-          <option value="ванна + унітаз">Установка ванни + унітазу</option>
+        <select name="work_type" required>
+          <option value="">Оберіть…</option>
+          <option value="Повний сантехмонтаж">Повний сантехмонтаж під ключ</option>
+          <option value="Часткова заміна труб">Часткова заміна труб</option>
+          <option value="Аварійний ремонт">Аварійний ремонт (протікання)</option>
+          <option value="Установка ванни + унітазу">Установка ванни + унітазу</option>
         </select>
       </div>
-      <div class="calc-result">
-        <div class="note">Орієнтовна вартість:</div>
-        <div class="price" id="calc-price">від 5 000 ₴</div>
+      <div class="calc-field">
+        <label>Ваш телефон</label>
+        <input type="tel" name="phone" placeholder="+380 __ ___ __ __" required>
       </div>
-      <a href="tel:+380674169397" class="calc-submit">
-        <i class="fas fa-phone-alt"></i> Прорахувати — дзвінок майстру
-      </a>
-    </div>
+      <div class="calc-field">
+        <label>Ваше ім'я</label>
+        <input type="text" name="name" placeholder="Ваше ім'я" required>
+      </div>
+      <div class="calc-result" id="calc-result" style="display:none">
+        <div class="price">✅ Заявку відправлено!</div>
+        <div class="note">Майстер зателефонує вам за 1 хвилину.</div>
+      </div>
+      <button type="submit" class="calc-submit">
+        <i class="fas fa-paper-plane"></i> Відправити заявку
+      </button>
+      <div style="text-align:center;margin-top:8px;font-size:12px;color:var(--text2)">Натискаючи, ви даєте згоду на обробку номера телефону</div>
+    </form>
+
+    <script>
+    document.getElementById('calc-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.calc-submit');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Відправляємо…';
+      btn.disabled = true;
+      
+      const formData = new FormData(form);
+      try {
+        const resp = await fetch(form.action, { method: 'POST', body: formData });
+        const data = await resp.json();
+        if (data.success) {
+          document.getElementById('calc-result').style.display = 'block';
+          form.querySelector('.calc-submit').style.display = 'none';
+          // Автодзвінок (опціонально)
+          setTimeout(() => { window.location.href = 'tel:+380674169397'; }, 1500);
+        } else {
+          alert('Помилка. Зателефонуйте нам: +380 67 416 93 97');
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Відправити заявку';
+          btn.disabled = false;
+        }
+      } catch(err) {
+        alert('Помилка. Зателефонуйте нам: +380 67 416 93 97');
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Відправити заявку';
+        btn.disabled = false;
+      }
+    });
+    </script>
+  </div>
   </div>
 </section>
 
