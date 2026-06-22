@@ -1,15 +1,15 @@
 /* ── RESET & ROOT ───────────────────────────────────────────────── */
 :root {
-  --bg: #101218;
-  --bg2: #17171D;
-  --bg3: #161616;
-  --text: #e8e8e8;
-  --text2: #999;
+  --bg: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #f0f0f0;
+  --text: #1a1a1a;
+  --text2: #666666;
   --accent: #005DA9;
   --accent-dark: #00488a;
   --accent-light: #e6f0f9;
-  --black: #101218;
-  --line: #222;
+  --black: #ffffff;
+  --line: #e0e0e0;
   --red: var(--accent);
   --font-d: 'Archivo Black', sans-serif;
   --font: 'Manrope', sans-serif;
@@ -132,12 +132,12 @@ ul{list-style:none}
 
 /* ── CTA BAND ──────────────────────────────────────────────────── */
 .cta-band{position:relative;padding:100px 20px;background:var(--accent);overflow:hidden}
-.cta-band::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--bg) 1px,transparent 1px),linear-gradient(90deg,var(--bg) 1px,transparent 1px);background-size:60px 60px;opacity:.06}
+.cta-band::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);background-size:60px 60px;opacity:.15}
 .cta-band-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center}
-.cta-band h2{font-family:var(--font-d);font-size:clamp(36px,5vw,64px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:16px;color:var(--black)}
-.cta-band p{font-size:16px;color:rgba(0,0,0,.6);line-height:1.6;margin-bottom:28px}
-.cta-phone{display:inline-flex;align-items:center;gap:12px;padding:18px 36px;background:var(--black);color:var(--accent);font-weight:700;font-size:20px;border-radius:var(--radius);transition:all .2s}
-.cta-phone:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.cta-band h2{font-family:var(--font-d);font-size:clamp(36px,5vw,64px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:16px;color:#ffffff}
+.cta-band p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:28px}
+.cta-phone{display:inline-flex;align-items:center;gap:12px;padding:18px 36px;background:#ffffff;color:var(--accent);font-weight:700;font-size:20px;border-radius:var(--radius);transition:all .2s}
+.cta-phone:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.15)}
 .cta-phone svg{width:20px;height:20px}
 
 /* ── FOOTER ────────────────────────────────────────────────────── */
@@ -176,7 +176,7 @@ ul{list-style:none}
 .float-btn-call{background:var(--accent);color:var(--black)}
 .float-btn-viber{background:#7360f2}
 .float-btn-whatsapp{background:#25d366}
-.float-btn-tooltip{position:absolute;right:calc(100% + 10px);white-space:nowrap;background:#222;color:#eee;font-size:11px;padding:5px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
+.float-btn-tooltip{position:absolute;right:calc(100% + 10px);white-space:nowrap;background:#1a1a1a;color:#fff;font-size:11px;padding:5px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
 .float-btn:hover .float-btn-tooltip{opacity:1}
 @media(max-width:600px){
   .float-contacts{bottom:80px!important;right:10px!important;gap:8px}
