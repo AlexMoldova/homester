@@ -237,3 +237,11 @@ ul{list-style:none}
 .calc-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,93,169,.25)}
 .calc-submit i{font-size:20px}
 .calc-submit:disabled{opacity:.7;cursor:not-allowed;transform:none!important}
+
+/* ── FLOATING CALC BUTTON (закріплена кнопка калькулятора) ──── */
+.float-calc-btn{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:9998;background:var(--accent);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 6px 24px rgba(0,93,169,.35);animation:floatPulse 2.5s infinite;transition:all .2s}
+.float-calc-btn:hover{animation:none;transform:translateX(-50%) translateY(-3px);box-shadow:0 10px 32px rgba(0,93,169,.45)}
+.float-calc-btn .calc-dot{width:10px;height:10px;background:#fff;border-radius:50%;animation:liveDot 1.5s infinite}
+@keyframes floatPulse{0%,100%{box-shadow:0 6px 24px rgba(0,93,169,.35)}50%{box-shadow:0 8px 36px rgba(0,93,169,.55)}}
+@keyframes liveDot{0%,100%{opacity:1}50%{opacity:.3}}
+@media(min-width:769px){.float-calc-btn{display:none}}
