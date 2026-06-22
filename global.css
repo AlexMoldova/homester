@@ -247,3 +247,10 @@ ul{list-style:none}
 .sticky-calc-bar .sticky-calc-icon{font-size:16px}
 .sticky-calc-bar .sticky-calc-arrow{font-size:10px;animation:bounceDown 1.5s infinite}
 @keyframes bounceDown{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* ── GALLERY ──────────────────────────────────────────────────── */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;border:2px solid var(--line);transition:all .3s}
+.gallery-item:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,93,169,.12)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+@media(min-width:768px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
