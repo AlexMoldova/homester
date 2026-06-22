@@ -211,3 +211,13 @@ ul{list-style:none}
   .hero-photo-wrap{max-width:100%}
   .hero h1{font-size:clamp(64px,17vw,96px);line-height:.85}
 }
+
+/* ── MOBILE BOTTOM BAR (плаваюча кнопка з номером знизу) ──── */
+.mobile-call-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--accent);padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.15);animation:slideUp .3s ease}
+.mobile-call-bar a{color:#fff;text-decoration:none;font-weight:700;font-size:18px;display:flex;align-items:center;gap:10px}
+.mobile-call-bar .bar-icon{width:42px;height:42px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;animation:pulse 2s infinite}
+.mobile-call-bar .bar-text{display:flex;flex-direction:column}
+.mobile-call-bar .bar-label{font-size:11px;opacity:.8;text-transform:uppercase;letter-spacing:1px}
+.mobile-call-bar .bar-phone{font-family:var(--font-d);font-size:18px}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@media(min-width:769px){.mobile-call-bar{display:none}}
