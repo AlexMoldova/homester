@@ -223,7 +223,8 @@ ul{list-style:none}
 @media(min-width:769px){.mobile-call-bar{display:none}}
 
 /* ── КАЛЬКУЛЯТОР ПРОРАХУНКУ ────────────────────────────────── */
-.calc-section{background:var(--bg2);border-radius:var(--radius);padding:40px;max-width:500px;margin:0 auto;border:2px solid var(--accent);box-shadow:0 8px 32px rgba(0,93,169,.08)}
+.calc-section{background:var(--bg2);border-radius:var(--radius);padding:40px;max-width:500px;margin:0 auto;border:2px solid var(--accent);box-shadow:0 8px 32px rgba(0,93,169,.08);animation:calcBorderGlow 3s ease-in-out infinite}
+@keyframes calcBorderGlow{0%,100%{border-color:var(--accent);box-shadow:0 8px 32px rgba(0,93,169,.08)}50%{border-color:#4da3ff;box-shadow:0 8px 48px rgba(0,93,169,.2)}}
 .calc-title{font-family:var(--font-d);font-size:22px;text-align:center;margin-bottom:24px}
 .calc-field{margin-bottom:16px}
 .calc-field label{display:block;font-size:13px;font-weight:600;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
@@ -241,12 +242,13 @@ ul{list-style:none}
 
 
 /* ── STICKY CALC BAR (тонка смужка під nav) ─────────────────── */
-.sticky-calc-bar{background:var(--accent);overflow:hidden}
-.sticky-calc-bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 16px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
-.sticky-calc-bar a:hover{background:var(--accent-dark)}
-.sticky-calc-bar .sticky-calc-icon{font-size:16px}
-.sticky-calc-bar .sticky-calc-arrow{font-size:10px;animation:bounceDown 1.5s infinite}
-@keyframes bounceDown{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+.sticky-calc-bar{background:var(--accent);overflow:hidden;position:sticky;top:64px;z-index:99}
+.sticky-calc-bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:all .2s;animation:calcGlow 2s infinite}
+.sticky-calc-bar a:hover{background:var(--accent-dark);animation:none}
+.sticky-calc-bar .sticky-calc-icon{font-size:18px;animation:pulse 1.5s infinite}
+.sticky-calc-bar .sticky-calc-arrow{font-size:12px;animation:bounceDown 1.5s infinite}
+@keyframes bounceDown{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes calcGlow{0%,100%{box-shadow:inset 0 0 0 rgba(255,255,255,0)}50%{box-shadow:inset 0 0 30px rgba(255,255,255,.15)}}
 
 /* ── GALLERY ──────────────────────────────────────────────────── */
 .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
