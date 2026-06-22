@@ -221,3 +221,18 @@ ul{list-style:none}
 .mobile-call-bar .bar-phone{font-family:var(--font-d);font-size:18px}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
 @media(min-width:769px){.mobile-call-bar{display:none}}
+
+/* ── КАЛЬКУЛЯТОР ПРОРАХУНКУ ────────────────────────────────── */
+.calc-section{background:var(--bg2);border-radius:var(--radius);padding:40px;max-width:500px;margin:0 auto;border:2px solid var(--accent);box-shadow:0 8px 32px rgba(0,93,169,.08)}
+.calc-title{font-family:var(--font-d);font-size:22px;text-align:center;margin-bottom:24px}
+.calc-field{margin-bottom:16px}
+.calc-field label{display:block;font-size:13px;font-weight:600;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.calc-field select,.calc-field input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:var(--font);background:var(--bg);color:var(--text);appearance:none}
+.calc-field select:focus,.calc-field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,93,169,.1)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-result{text-align:center;margin-top:24px}
+.calc-result .price{font-family:var(--font-d);font-size:36px;color:var(--accent)}
+.calc-result .note{font-size:13px;color:var(--text2);margin-top:4px}
+.calc-submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;background:var(--accent);color:#fff;padding:18px;border-radius:12px;font-weight:700;font-size:18px;margin-top:20px;border:none;cursor:pointer;transition:all .2s}
+.calc-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,93,169,.25)}
+.calc-submit i{font-size:20px}

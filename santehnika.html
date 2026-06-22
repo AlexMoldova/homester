@@ -369,6 +369,64 @@
   </div>
 </section>
 
+<!-- SECTION: КАЛЬКУЛЯТОР ПРОРАХУНКУ (сантехніка) -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <div class="section-num">⚡ ПРОРАХУНОК</div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,42px)">Скільки коштує<br><span class="accent">сантехніка?</span></h2>
+      <p class="section-desc" style="margin:0 auto">Заповніть 3 поля — натисніть «Прорахувати» — і наш майстер одразу зателефонує.</p>
+    </div>
+    <div class="calc-section">
+      <div class="calc-field">
+        <label>Тип об'єкту</label>
+        <select id="calc-type">
+          <option value="Квартира">Квартира</option>
+          <option value="Будинок">Приватний будинок</option>
+          <option value="Офіс">Офіс / комерція</option>
+          <option value="Новобудова">Новобудова (чорнова)</option>
+        </select>
+      </div>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>К-сть кімнат</label>
+          <select id="calc-rooms">
+            <option value="1">1-кімнатна</option>
+            <option value="2" selected>2-кімнатна</option>
+            <option value="3">3-кімнатна</option>
+            <option value="4">4+ кімнат</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Площа (м²)</label>
+          <select id="calc-area">
+            <option value="до 50">до 50 м²</option>
+            <option value="50-80" selected>50–80 м²</option>
+            <option value="80-120">80–120 м²</option>
+            <option value="120+">120+ м²</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-field">
+        <label>Вид робіт</label>
+        <select id="calc-work">
+          <option value="повний монтаж">Повний електромонтаж під ключ</option>
+          <option value="часткова заміна">Часткова заміна труб</option>
+          <option value="аварійний ремонт">Аварійний ремонт</option>
+          <option value="ванна + унітаз">Установка ванни + унітазу</option>
+        </select>
+      </div>
+      <div class="calc-result">
+        <div class="note">Орієнтовна вартість:</div>
+        <div class="price" id="calc-price">від 5 000 ₴</div>
+      </div>
+      <a href="tel:+380674169397" class="calc-submit">
+        <i class="fas fa-phone-alt"></i> Прорахувати — дзвінок майстру
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
